@@ -72,22 +72,25 @@ function deletTask(index) {
 // modifier une task
 function updateTask(index) {
   let task = tasks[index];
-  let newTitre = prompt("entrez le titre :", task.titre);
-  task.titre = newTitre;
-  let modofierDate = confirm("modifier la date ?");
-  if (modofierDate) {
-    let time = new Date();
-    let timeFormat =
-      time.getDate() +
-      "/" +
-      (time.getMonth() + 1) +
-      "/" +
-      time.getFullYear() +
-      "|" +
-      time.getHours() +
-      ":" +
-      time.getMinutes();
-    task.date = timeFormat;
+  let modifier = confirm("voulez-vous modifier la tâche ?");
+  if (modifier) {
+    let newTitre = prompt("entrez le titre :", task.titre);
+    task.titre = newTitre;
+    let modofierDate = confirm("modifier la date ?");
+    if (modofierDate) {
+      let time = new Date();
+      let timeFormat =
+        time.getDate() +
+        "/" +
+        (time.getMonth() + 1) +
+        "/" +
+        time.getFullYear() +
+        "|" +
+        time.getHours() +
+        ":" +
+        time.getMinutes();
+      task.date = timeFormat;
+    }
   }
   readTask();
   addTask();
@@ -134,28 +137,30 @@ addTask();
 // eventement d'ajouter une task
 document.getElementById("ajouter").addEventListener("click", function () {
   let taskTitre = prompt("entrer le nom du task");
-  // recuperer la date
-  let time = new Date();
-  let timeFormat =
-    time.getDate() +
-    "/" +
-    (time.getMonth() + 1) +
-    "/" +
-    time.getFullYear() +
-    "|" +
-    time.getHours() +
-    ":" +
-    time.getMinutes();
+  if (taskTitre) {
+    // recuperer la date
+    let time = new Date();
+    let timeFormat =
+      time.getDate() +
+      "/" +
+      (time.getMonth() + 1) +
+      "/" +
+      time.getFullYear() +
+      "|" +
+      time.getHours() +
+      ":" +
+      time.getMinutes();
 
-  // la nouvelle task
-  let newTask = {
-    titre: taskTitre,
-    date: timeFormat,
-    isDone: false,
-    dateEnd: "pas encore",
-  };
-  // ajouter à l'ensemble d'objet et l'appel du finction afficher
-  tasks.push(newTask);
-  readTask();
-  addTask();
+    // la nouvelle task
+    let newTask = {
+      titre: taskTitre,
+      date: timeFormat,
+      isDone: false,
+      dateEnd: "pas encore",
+    };
+    // ajouter à l'ensemble d'objet et l'appel du finction afficher
+    tasks.push(newTask);
+    readTask();
+    addTask();
+  }
 });
