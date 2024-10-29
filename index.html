@@ -3,8 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Description -->
+    <meta
+      name="description"
+      content="Organize your tasks efficiently with this To-Do List app. Add, view, and manage tasks effortlessly with a user-friendly interface."
+    />
+
+    <!-- External Stylesheet -->
     <link href="./docs/output.css" rel="stylesheet" />
-    <!-- external libraries -->
+
+    <!-- External Libraries -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,36 +24,30 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    />
+    <link rel="icon" href="icon.png" type="image/png" />
 
-    <link
-      rel="icon"
-      href="icon.png"
-      type="image/png"
-    />
-    <title>To do list</title>
+    <!-- Title with Keywords -->
+    <title>To-Do List App | Task Organizer and Planner</title>
   </head>
   <body class="bg m-0">
     <!-- la carte en general -->
     <div class="flex justify-center">
       <div class="content w-3/5 absolute">
         <!-- le titre -->
-        <div class="titre text-white w-full text-center p-3">
+        <header  class="titre text-white w-full text-center p-3">
           <h1 class="text-3xl font-serif inline">Mes taches</h1>
           <button
             id="ajouter"
             class="bg-white text-purple-800 m-2 text-xl font-extrabold b-radius float-right"
+            aria-label="Add new task"
           >
             <span class="material-symbols-outlined"> add </span>
           </button>
-        </div>
+        </header>
         <!-- fin du titre -->
 
         <!-- la liste des tasks -->
-        <div id="tasks" class="w-full bg-slate-300 p-2"></div>
+        <main id="tasks" class="w-full bg-slate-300 p-2"></main>
 
         <!-- fin du liste des task -->
       </div>
