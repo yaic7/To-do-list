@@ -1,7 +1,7 @@
 // exemple des tasks
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-console.log('Tasks loaded:', tasks);
+console.log("Tasks loaded:", tasks);
 
 function readTask() {
   let taskStocker = JSON.stringify(tasks);
@@ -20,7 +20,7 @@ function addTask() {
             } border-b-2 border-black h-4/6 flex items-center hover:shadow-lg hover:shadow-slate-900 transition"
             >
             <!-- une task -->
-            <div class="w-8/12 h-4/6 font-bold m-2">
+            <div class="w-8/12 h-4/6 font-bold m-2 rounded-lg">
               <!-- titre du task -->
               <h2>${task.titre}</h2>
               <!-- la date du task -->
@@ -136,7 +136,7 @@ function endTask(index) {
 addTask();
 // eventement d'ajouter une task
 document.getElementById("ajouter").addEventListener("click", function () {
-  console.log('Add button clicked');
+  console.log("Add button clicked");
   let taskTitre = prompt("entrer le nom du task");
   if (taskTitre) {
     // recuperer la date
